@@ -143,7 +143,7 @@ const students = [
     image: "/images/malestudent3.jpg"
   },
   {
-    name: "Mehwish Tariq",
+    name: "Maria thomas",
     age: 22,
     course: "Cloud Computing",
     email: "mehwish.tariq@example.com",
