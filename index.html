@@ -4,14 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/bootstrap-5.3.6-dist//css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
     <title>Document</title>
 </head>
 <body>
+<!-- modal starting  -->
+ <div class="modal fade "  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Generate profile card</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body " id="modal-body">
+     <!-- form starting  -->
+
+<div class="row mb-3">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Name" aria-label="Name" id="name">
+  </div>
+  <div class="col">
+    <input type="number" class="form-control" placeholder="Age" aria-label="Age" id="age">
+  </div>
+ 
+</div>
+<div class="row mb-3">
+  <div class="col">
+    <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="email">
+  </div>
+   <div class="col">
+    <input type="text" class="form-control" placeholder="Course" aria-label="Course" id="course">
+  </div>
+</div>
+
+<div class="row">
+    <div class="col">
+      <input class="form-control" type="file" id="formFile" >
+      </div>
+</div>
+
+<!-- form ending  -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+        <button type="button" class="btn btn-primary" id="generate">Generate</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- modal ending -->
     <div class="cards-container ">
-    <h1>Student Profiles</h1>
+    <h1>Student Profile Card Generator</h1>
 
   <div class="swiper mySwiper">
        <div class="swiper-wrapper container">
@@ -149,9 +197,17 @@
     <div class="swiper-button-prev prev" ></div>
 
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+    <div class="btn-div">
+    <button type="button" class="btn btn-primary btn-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="generateProfileCard">
+   Generate Profile Card
+</button>
+</div>
+<div class="newcards">
 
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" ></script>
+     <script src="/bootstrap-5.3.6-dist/js/bootstrap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,75 @@
+
 var swiperWrapper=document.querySelector(".container");
+var generate=document.getElementById("generate");
+var genProfile=document.getElementById("generateProfileCard");
+
+function Student(name,age,email,course,image){
+  this.name=name;
+  this.age=age;
+  this.course=course;
+  this.email=email;
+  this.image=image;
+}
+
+var newcards=null;
+var student;
+
+generate.addEventListener("click",()=>{
+var stdname=document.getElementById("name").value;
+var age=document.getElementById("age").value;
+var email=document.getElementById("email").value;
+var course=document.getElementById("course").value;
+var filesrc=document.getElementById("formFile");
+ const file = filesrc.files[0];
+const image = file ? URL.createObjectURL(file):"/images/default.jpg";
+student=new Student(stdname,age,course,email,image);
+   var card= `  
+<div class="profile-card">
+        <div class="image">
+            <img src=${student.image} alt="" class="profile-img">
+        </div>
+        <div class="text-data">
+            <span class="name">${student.name}</span>
+    
+        </div>
+        <div class="details">
+                    <span class="age"><p>${student.age} Years old</p></span>
+            <span class="course"><i class="ri-graduation-cap-fill"></i><p>${student.course}</p></span>
+            <span class="email"><i class="ri-mail-fill"></i><p>${student.email}</p></span>
+        </div>
+        
+       
+        <div class="media-buttons">
+            <a href="www.linkedin.com/in/syeda-maham-amjad-4467b1295"  style="background-color: #0a66c2;"class="link">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100088904124091" style="background-color: #0866ff ;" class="link">
+                <i class='bx bxl-facebook-circle' ></i>
+            </a>
+            <a href="https://github.com/maham719"  style="background-color: #1f2328;"class="link">
+                <i class='bx bxl-github' ></i>
+            </a>
+            <a href="#" style="background-color: #5865f2 ;" class="link">
+                <i class='bx bxl-discord-alt'></i>
+            </a>
+        </div>
+    </div> `;
+  
+
+  newcards = document.querySelector(".newcards");    
+  newcards.innerHTML+=card;
+  Swal.fire({
+  title: "Card Generated Successfully",
+  text: "scroll the slider to check your card!",
+  icon: "success"
+});
+ stdname=document.getElementById("name").value="";
+ age=document.getElementById("age").value="";
+ email=document.getElementById("email").value="";
+ course=document.getElementById("course").value="";
+ filesrc=document.getElementById("formFile")="";
+})
+
 
 // swiper 
     var swiper = new Swiper(".mySwiper", {
@@ -100,6 +171,8 @@ const students = [
     image: "/images/malestudent4.jpg"
   }
 ];
+
+
 
 students.forEach(elem => {
     var card= `         <div class="swiper-slide">
